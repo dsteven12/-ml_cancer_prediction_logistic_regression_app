@@ -30,5 +30,5 @@ def export_file(model, scaler):
     with open(model_path, 'wb') as f:
         pickle.dump(model, f)
 
-    with open(model_path, 'wb') as f:
+    with open(scaler_path, 'wb') as f:
         pickle.dump(scaler, f)

@@ -24,7 +24,7 @@ def load_and_clean_data(filepath):
     X = data.drop(['diagnosis'], axis=1)
     y = data['diagnosis']
     
-    return X, y
+    return X, y, data
 
 def normalize_data(X):
     """
