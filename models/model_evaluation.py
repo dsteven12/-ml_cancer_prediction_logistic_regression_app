@@ -1,5 +1,4 @@
 from sklearn.metrics import accuracy_score, classification_report
-import pickle
 
 def evaluate_model(model, X_test, y_test):
     """

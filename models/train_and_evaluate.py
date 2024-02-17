@@ -8,7 +8,10 @@ def main():
         X_train, X_test, y_train, y_test = split_data(X_scaled, y)
         model = train_model(X_train, y_train)
         evaluate_model(model, X_test, y_test)
-        export_file(model, scaler)
+
+        # Converted X headers into a list to store column names
+        features = X.columns.tolist()
+        export_file(model, scaler, features)
 
 if __name__ == "__main__":
     main()
