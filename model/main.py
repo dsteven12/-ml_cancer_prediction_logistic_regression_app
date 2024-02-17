@@ -1,4 +1,7 @@
 import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
 
 def get_clean_data():
     data = pd.read_csv("../data/data.csv")
@@ -7,8 +10,29 @@ def get_clean_data():
     
     return data
 
+def create_model(data):
+    X = data.drop(['diagnosis'], axis=1)
+    y = data['diagnosis']
+
+    # Normalize Data
+    scaler = StandardScaler()
+    X_scaled = X.scalar.fit_transform(X)
+
+    # Split the Data
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=7
+    )
+
+    # Train
+    model = LogisticRegression()
+    model.fit(X_train, y_train)
+
+    return model, scaler
+
+
 def main():
     data = get_clean_data()
+    model = create_model(data)
 
 if __name__ == "__main__":
     main()
