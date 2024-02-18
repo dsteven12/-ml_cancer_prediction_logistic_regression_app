@@ -35,7 +35,6 @@ def add_predictions(input_data):
     # This ensures the DataFrame matches the training structure
     input_df = pd.DataFrame([input_data], columns=features)
     input_array_scaled = scaler.transform(input_df)
-    st.write(input_array_scaled)
 
     prediction = model.predict(input_array_scaled)
 
