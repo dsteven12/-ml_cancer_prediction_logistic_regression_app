@@ -16,7 +16,7 @@ def main():
     Main function to launch the Streamlit app for breast cancer prediction.
     Loads data, configures the app's page, and renders UI components.
     """
-    filepath = "data/data.csv"
+    filepath = "../data/data.csv"
     # Load and preprocess data for the app.
     X, _, data = load_and_clean_data(filepath)
 
@@ -29,7 +29,7 @@ def main():
     )
 
     # Apply custom styles from external CSS.
-    load_style("assets/style.css")
+    load_style("../assets/style.css")
 
     # Collect user input for prediction via sidebar sliders.
     input_data = add_sidebar(data)
