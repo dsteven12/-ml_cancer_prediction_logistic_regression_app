@@ -11,13 +11,13 @@ def load_model_scaler_features():
     - scaler: The StandardScaler used for data normalization.
     - features: The feature names used during training.
     """
-    with open('../artifacts/model.pkl', 'rb') as f:
+    with open('artifacts/model.pkl', 'rb') as f:
         model = pickle.load(f)
     
-    with open('../artifacts/scaler.pkl', 'rb') as f:
+    with open('artifacts/scaler.pkl', 'rb') as f:
         scaler = pickle.load(f)
     
-    with open('../artifacts/features.pkl', 'rb') as f:
+    with open('artifacts/features.pkl', 'rb') as f:
         features = pickle.load(f)
     
     return model, scaler, features
