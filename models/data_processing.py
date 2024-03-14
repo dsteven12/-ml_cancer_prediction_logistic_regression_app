@@ -16,7 +16,7 @@ def load_and_clean_data(filepath):
         data = pd.read_csv(filepath)
     except FileNotFoundError:
         print(f"File not found: {filepath}")
-        return None, None
+        return None, None, None
 
     data.drop(["Unnamed: 32", "id"], axis=1, inplace=True)
     data['diagnosis'] = data['diagnosis'].map({'M': 1, 'B': 0})
